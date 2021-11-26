@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
-
+from odoo import http
 
 # class upoHome(http.Controller):
 #     @http.route('/upoHome/upoHome/', auth='public')
