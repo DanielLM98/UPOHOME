@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="upoHome_gastos_form_view">
+			<field name="name">upohome_gastos_form_view</field>
+			<field name="model">upohome.gastos</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de gastos">
+					<group string="Gastos">
+						<field name="name" />
+						<field name="importe" />
+						<field name="descripcion" />
+						<field name="alquiler_id"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upohome_gastos_tree_view">
+			<field name="name">upohome_gastos_tree_view</field>
+			<field name="model">upohome.gastos</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de gastos">
+					<field name="name" />
+					<field name="importe" />
+					<field name="descripcion" />
+					<field name="alquiler_id"/>	
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_gastos" model="ir.actions.act_window">
+			<field name="name">Contratos</field>
+			<field name="res_model">upohome.gastos</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Gastos" id="gastos_submenu"
+			parent="upoHome" sequence="100" />
+		<menuitem name="Ver gastos" id="gastos_submenu_2"
+			parent="gastos_submenu" sequence="110" action="act_gastos" />
+	</data>
+</odoo>
